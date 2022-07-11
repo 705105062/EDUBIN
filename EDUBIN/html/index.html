@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edubin</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../js/tailwind.config.js"></script>
+  <style type="text/tailwindcss">
+    .header-menu-navbar-item {
+        @apply text-w_darkblue font-semibold px-2 hover:text-w_orange transition ease-in-out duration-500;
+    }
+    .hover-Btn {
+        @apply py-2 px-3 text-w_darkblue font-semibold font-fontMontserrat rounded hover:bg-w_darkblue hover:text-white transition ease-in-out duration-500;
+    }
+    .main-slide-items {
+        @apply mx-3 rounded text-white;
+    }
+    .footer-item {
+        @apply text-w_greyish hover:pl-1 hover:text-w_orange transition ease-in-out duration-300;
+    }
+  </style>
+
+</head>
+<body class="font-fontweb">
+  <header>
+    <div class="header-contact lg:py-3 flex lg:justify-between items-center bg-w_darkblue text-w_greyish text-base sm:justify-center">
+        <div class="header-contact-right lg:ml-20 lg:block sm:hidden">
+            <ul class="flex">
+                <li>
+                    <div class="header-contact-email mx-5">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>info@yourmail.com</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="header-contact-telephone">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>123-456-7890</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="header-contact-left mr-20 flex">
+            <span class="mr-3 lg:block sm:hidden">Follow Us:</span>
+            <ul class="header-contact-icons-chat flex">
+                <li class="px-1">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                </li>
+                <li class="px-1">
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </li>
+                <li class="px-1">
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </li>
+                <li class="px-1">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </li>
+                <li>
+                    <div class="flex text-w_orange"> 
+                        <a href="#" class="px-3">Login</a>
+                        <p>/</p>
+                        <a href="#" class="px-3">Register</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="bg-white w-full z-50" id="header">
+        <div class="header-menu ml-20 mr-20 py-5 flex justify-between items-center">
+            <div class="header-menu-logo ">
+                <img src="../img/logo.png" alt="logo Edubin">
+            </div>
+            <div class="header-menu-navbar uppercase lg:flex lg:block sm:hidden">
+                <div class="header-menu-navbar-item relative" onmouseover="hoverHeaderMenu(this)" onmouseout="outHoverHeaderMenu(this)">
+                    <div class="header-menu-navbar-list ">
+                        <a class="header-menu-navbar-lv1 flex items-top">Home
+                            <i class="fa-solid fa-angle-down px-1"></i>
+                        </a>
+                    </div>
+                    <div class="hidden absolute top-10 z-20" onmouseover="abc()" onmouseout="def()">
+                        <div class="mt-4 p-2 w-60 bg-white border-t-2 border-t-w_orange flex ">
+                            <ul>
+                                <li class="text-w_smoke font-bold text-base normal-case hover:text-w_orange hover:pl-2"><a href="">All Home Demos</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-menu-navbar-item relative" onmouseover="hoverHeaderMenu(this)" onmouseout="outHoverHeaderMenu(this)">
+                    <div class="header-menu-navbar-list ">
+                        <a class="header-menu-navbar-lv1 flex items-top">Courses
+                            <i class="fa-solid fa-angle-down px-1"></i>
+                        </a>
+                    </div>
+                    <div class="hidden absolute top-10 z-20" onmouseover="abc()" onmouseout="def()">
+                        <div class="mt-4 p-2 w-60 bg-white border-t-2 border-t-w_orange flex ">
+                            <ul>
+                                <li class="py-1 text-w_smoke font-bold text-base normal-case hover:text-w_orange hover:pl-2"><a href="">Course Grid Variations</a></li>
+                                <li class="py-1 text-w_smoke font-bold text-base normal-case hover:text-w_orange hover:pl-2"><a href="">Advanced Course Filter</a></li>
+                                <li class="py-1 text-w_smoke font-bold text-base normal-case hover:text-w_orange hover:pl-2"><a href="">Membership Levels</a></li>
+                                <li class="py-1 text-w_smoke font-bold text-base normal-case hover:text-w_orange hover:pl-2"><a href="">LearnPress Profile</a></li>
+                                <li class="py-1 text-w_smoke font-bold text-base normal-case hover:text-w_orange hover:pl-2"><a href="">Become an Instructor</a></li>
+                                <li class="py-1 text-w_smoke font-bold text-base normal-case hover:text-w_orange hover:pl-2"><a href="">Paid Type Course</a></li>
+                                <li class="py-1 text-w_smoke font-bold text-base normal-case hover:text-w_orange hover:pl-2"><a href="">Free Type Course</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-menu-navbar-item relative" onmouseover="hoverHeaderMenu(this)" onmouseout="outHoverHeaderMenu(this)">
+                    <div class="header-menu-navbar-list ">
+                        <a class="header-menu-navbar-lv1 flex items-top">Pages
+                            <i class="fa-solid fa-angle-down px-1"></i>
+                        </a>
+                    </div>
+                    <div class="hidden absolute top-10 z-20" onmouseover="abc()" onmouseout="def()">
+                        <div class="mt-4 p-2 w-60 bg-white border-t-2 border-t-w_orange flex ">
+                            <ul>
+                                <li class="py-1 text-w_smoke font-bold text-base normal-case hover:text-w_orange hover:pl-2"><a href="">About Us</a></li>
+                                <li class="py-1 text-w_smoke font-bold text-base normal-case hover:text-w_orange hover:pl-2"><a href="">Pricing Table</a></li>
+                                <li class="py-1 text-w_smoke font-bold text-base normal-case hover:text-w_orange hover:pl-2"><a href="">Teachers</a></li>
+                                <li class="py-1 text-w_smoke font-bold text-base normal-case hover:text-w_orange hover:pl-2"><a href="">404 Page</a></li>
+                                <li class="py-1 text-w_smoke font-bold text-base normal-case hover:text-w_orange hover:pl-2"><a href="">FAQs</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-menu-navbar-item relative" onmouseover="hoverHeaderMenu(this)" onmouseout="outHoverHeaderMenu(this)">
+                    <div class="header-menu-navbar-list ">
+                        <a class="header-menu-navbar-lv1 flex items-top">Events
+                            <i class="fa-solid fa-angle-down px-1"></i>
+                        </a>
+                    </div>
+                    <div class="hidden absolute top-10 z-20" onmouseover="abc()" onmouseout="def()">
+                        <div class="mt-4 p-2 w-60 bg-white border-t-2 border-t-w_orange flex ">
+                            <ul>
+                                <li class="py-1 text-w_smoke font-bold text-base normal-case hover:text-w_orange hover:pl-2"><a href="">Events Archive</a></li>
+                                <li class="py-1 text-w_smoke font-bold text-base normal-case hover:text-w_orange hover:pl-2"><a href="">Events Grid</a></li>
+                                <li class="py-1 text-w_smoke font-bold text-base normal-case hover:text-w_orange hover:pl-2"><a href="">Single Events 1</a></li>
+                                <li class="py-1 text-w_smoke font-bold text-base normal-case hover:text-w_orange hover:pl-2"><a href="">Single Events 2</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-menu-navbar-item relative" onmouseover="hoverHeaderMenu(this)" onmouseout="outHoverHeaderMenu(this)">
+                    <div class="header-menu-navbar-list ">
+                        <a class="header-menu-navbar-lv1 flex items-top">Blog
+                            <i class="fa-solid fa-angle-down px-1"></i>
+                        </a>
+                    </div>
+                    <div class="hidden absolute top-10 z-20" onmouseover="abc()" onmouseout="def()">
+                        <div class="mt-4 p-2 w-60 bg-white border-t-2 border-t-w_orange flex ">
+                            <ul>
+                                <li class="py-1 text-w_smoke font-bold text-base normal-case hover:text-w_orange hover:pl-2"><a href="">Blog List</a></li>
+                                <li class="py-1 text-w_smoke font-bold text-base normal-case hover:text-w_orange hover:pl-2"><a href="">Blog Grid</a></li>
+                                <li class="py-1 text-w_smoke font-bold text-base normal-case hover:text-w_orange hover:pl-2"><a href="">Blog Single</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-menu-navbar-item relative" onmouseover="hoverHeaderMenu(this)" onmouseout="outHoverHeaderMenu(this)">
+                    <div class="header-menu-navbar-list ">
+                        <a class="header-menu-navbar-lv1 flex items-top">Shop
+                            <i class="fa-solid fa-angle-down px-1"></i>
+                        </a>
+                    </div>
+                    <div class="hidden absolute top-10 z-20" onmouseover="abc()" onmouseout="def()">
+                        <div class="mt-4 p-2 w-60 bg-white border-t-2 border-t-w_orange flex ">
+                            <ul>
+                                <li class="py-1 text-w_smoke font-bold text-base normal-case hover:text-w_orange hover:pl-2"><a href="">Book Shop</a></li>
+                                <li class="py-1 text-w_smoke font-bold text-base normal-case hover:text-w_orange hover:pl-2"><a href="">Shop Single</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-menu-navbar-item">
+                    <a href="#" class="flex items-top">
+                        <span class="pr-1">Contact</span>
+                    </a>
+                </div>
+                <div class="header-menu-navbar-item">
+                    <ul class="flex">
+                        <li>
+                            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="relative">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <p class="px-2 bg-w_orange text-white rounded-full absolute bottom-3 left-2">0</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="menu_nav lg:hidden sm:block mt-2 sm:flex sm:justify-around">
+                <p><i class="fa-solid fa-bars text-w_darkblue px-5 relative" onclick="showMenuMB()"></i></p>
+                <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href="#" class="relative">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <p class="px-2 bg-w_orange text-white rounded-full absolute bottom-3 left-2">0</p>
+                </a>
+            </div>  
+        </div>
+    </div>
+    <div class="menu-navbar-mb w-full absolute top-20 z-30 bg-white lg:hidden sm:hidden" id="menuMB">
+        <div class="mx-5">
+            <ul class="pt-5">
+                <li class="flex justify-between border-t-2 border-b-2 p-4 m-auto ">
+                    <a href="">Home</a>
+                    <p><i class="fab fa-plus text-w_gray text-2xl font-black"></i></p>
+                </li>
+                <li class="flex justify-between border-b-2 p-4 m-auto ">
+                    <a href="">Course</a>
+                    <p><i class="fab fa-plus text-w_gray text-2xl font-black"></i></p>
+                </li>
+                <li class="flex justify-between border-b-2 p-4 m-auto ">
+                    <a href="">Page</a>
+                    <p><i class="fab fa-plus text-w_gray text-2xl font-black"></i></p>
+                </li>
+                <li class="flex justify-between border-b-2 p-4 m-auto ">
+                    <a href="">Events</a>
+                    <p><i class="fab fa-plus text-w_gray text-2xl font-black"></i></p>
+                </li>
+                <li class="flex justify-between border-b-2 p-4 m-auto ">
+                    <a href="">Blog</a>
+                    <p><i class="fab fa-plus text-w_gray text-2xl font-black"></i></p>
+                </li>
+                <li class="flex justify-between border-b-2 p-4 m-auto ">
+                    <a href="">Shop</a>
+                    <p><i class="fab fa-plus text-w_gray text-2xl font-black"></i></p>
+                </li>
+                <li class="flex justify-between border-b-2 p-4 m-auto ">
+                    <a href="">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </header>
+  <main>
+    <div class="main-slide h-full w-full items-center relative">
+        <div class="slide s1">
+            <img id="img" onclick="changeImage()" src="../img/img_slide1.jpg" style="height: 800px; width: 100%">
+        </div>
+        <div class="main-slide-title " id="z1">
+            <div class="main-slide-title-1 text-white absolute left-20 top-20">
+                <h2 class="py-10 text-5xl font-black  ">
+                    Choose The Right
+                    <br>
+                    Theme for Education
+                </h2>
+                <p class="text-lg">Lorem dummy text of the printing and typesetting industry lorem ipsum <br> has been the industry's standard dummy text.</p>
+                <button type="button" class="my-10 mr-5 bg-w_orange hover-Btn">Apply Now</button>
+                <button type="button" class="bg-white hover-Btn">Learn More</button>
+            </div>
+        </div>
+        <div class="main-slide-title hidden" id="z2">
+            <div class="main-slide-title-1 text-white absolute left-20 top-20">
+                <h2 class="py-10 text-5xl font-black  ">
+                    Best LMS Education
+                    <br>
+                    WordPress Theme
+                </h2>
+                <p class="text-lg">Lorem dummy text of the printing and typesetting industry lorem ipsum <br> has been the industry's standard dummy text.</p>
+                <button type="button" class="my-10 mr-5 bg-w_orange hover-Btn">Apply Now</button>
+                <button type="button" class="bg-white hover-Btn">Learn More</button>
+            </div>
+        </div>
+        <div class="small_item grid lg:grid-cols-5 sm:grid-cols-1 p-10 rounded-2xl bg-w_darkblue" style="position: absolute; bottom: -19%; left: 10%; right: 10%;">
+            <div class="tittle text-4xl font-black py-10 px-10 text-white font-fontMontserrat lg:col-span-2">Best Platform to Learn Everything</div>
+            <div class="filtering flex relative lg:col-span-3">
+                <div class="slide_item p-5 mr-5 mt-6 rounded text-white bg-color_courses">
+                    <a href=""><img src="../img/courses.png" alt="">courses</a>
+                </div>
+                <div class="slide_item p-5 mr-5 mt-6 rounded text-white bg-color_events">
+                    <a href=""><img src="../img/events.png" alt="">Events</a>
+                </div>
+                <div class="slide_item p-5 mr-5 mt-6 rounded text-white bg-color_admissions">
+                   <a href=""> <img  src="../img/admissions.png" alt="">admissions</a>
+                </div>
+                <div class="slide_item p-5 mr-5 mt-6 rounded text-white bg-color_notice">
+                    <a href=""><img src="../img/notice.png" alt="">notice</a>
+                </div>
+                <div class="slide_item p-5 mr-5 mt-6 rounded text-white bg-color_programs">
+                    <a href=""><img src="../img/programs.png" alt="">programs</a>
+                </div> 
+            </div>
+        </div>
+    </div>
+    <div class="main-aboutUs">
+        <div class="h-20"></div>
+        <div class="main-aboutUs-content lg:my-20 lg:py-20 lg:mx-20 sm:mx-5 sm:py-20 grid lg:grid-cols-2 sm:grid-cols-1">
+            <div class="main-aboutUs-left pl-12 pr-20">
+                <p class="font-fontMontserrat text-xl font-bold tracking-wide text-w_darkblue">About Us</p>
+                <div class="h-0.5 w-12 my-6 bg-w_orange"></div>
+                <p class="font-fontMontserrat text-5xl font-bold tracking-wider leading-snug text-w_black">Welcome to Edubin</p>
+                <div class="py-5 text-base text-w_smoke">
+                    <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet . Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt mauris. </p>
+                    <br>
+                    <p>Auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet . Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt mauris</p>
+                    <br>
+                    <p>Buci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet . Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt mauris</p>
+                    <br>
+                </div>
+                <button type="button" class=" py-4 px-5 tracking-wide bg-w_orange hover-Btn">Explore More</button>
+            </div>
+            <div class="main-aboutUs-right pl-5" style="background-image: url(../img/events-bg-img.jpg);">    
+                <div class="main-aboutUs-right-content py-10">
+                    <div class="lg:m-5 sm:m-3 bg-white opacity-90">
+                        <h3 class="py-5 text-4xl font-bold tracking-wide text-w_black">Upcoming Events</h3>
+                        <div class="">
+                            <ul class="">
+                                <li><a href="">
+                                    <div class="py-5 mr-10 border-b-2 border-gray-200">
+                                        <p class="text-2xl font-bold tracking-wide text-w_black hover:text-w_orange transition ease-in-out duration-500">World University Convocation</p>
+                                        <div class="pt-5 flex">
+                                            <a class="text-w_orange mr-1"><i class="fa-regular fa-clock"></i></a>
+                                            <p class="text-w_smoke">12:00 AM to 11:59 PM</p>
+                                        </div>
+                                    </div>
+                                </li></a>
+                                <li><a href="">
+                                    <div class="py-5 mr-10 border-b-2 border-gray-200">
+                                        <div class="py-1 flex">
+                                            <a class="text-w_orange mr-2"><i class="fa-solid fa-calendar-days"></i></a>
+                                            <p class="text-w_smoke">31.March</p>
+                                        </div>
+                                        <p class="text-2xl font-bold tracking-wide text-w_black hover:text-w_orange transition ease-in-out duration-500">February Education Conferences</p>
+                                        <div class="pt-5 flex">
+                                            <a class="text-w_orange mr-1"><i class="fa-regular fa-clock"></i></a>
+                                            <p class="text-w_smoke">12:00 AM to 1:30 AM</p>
+                                        </div>
+                                    </div>
+                                </li></a>
+                                <li><a href="">
+                                    <div class="py-5 mr-10 ">
+                                        <p class="text-2xl font-bold tracking-wide text-w_black hover:text-w_orange transition ease-in-out duration-500">The Games Education Summit</p>
+                                        <div class="pt-5 flex">
+                                            <a class="text-w_orange mr-1"><i class="fa-regular fa-clock"></i></a>
+                                            <p class="text-w_smoke">12:00 AM to 11:59 PM</p>
+                                        </div>
+                                    </div>
+                                </li></a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="apply-for -mt-7">
+        <div class="apply-for-content lg:mx-10 px-2 text-white grid lg:grid-cols-2 sm:grid-cols-1">
+            <div class="appyly-for-content-left bg-w_darkblue">
+                <p class=" pt-10 px-10 text-3xl font-fontMontserrat font-bold">Apply for Fall 2019</p>
+                <div class="pl-10 pr-12 py-8">
+                    <p> Gravida nibh vel velit auctor aliquetn sollicitudirem sem quibibendum auci elit cons equat ipsutis sem nibh id elituis sed odio sit amet nibh vulputate cursus equat ipsutis.</p>
+                    <br>
+                    <button type="button" class=" py-4 px-5 tracking-wide bg-w_orange hover-Btn border-2 border-w_orange hover:border-white">Apply Now</button>
+                </div>
+                
+            </div>
+            <div class="appyly-for-content-right bg-w_blue lg:mt-0 sm:mt-5">
+                <p class=" pt-10 px-10 text-3xl font-fontMontserrat font-bold">Apply for Scholarship</p>
+                <div class="pl-10 pr-12 py-8">
+                    <p> Sollicitudirem sem quibibendum auci elit cons equat ipsutis sem nibh id elituis sed odio sit amet nibh vulputate cursus equat ipsutis gravida nibh vel velit auctor aliquetn.</p>
+                    <br>
+                    <button type="button" class=" py-4 px-5 tracking-wide bg-w_orange hover-Btn border-2 border-w_orange hover:border-white">Apply Now</button>
+                </div>
+            </div>
+        </div>  
+    </div>
+    <div class="main-our-courses mt-20">
+        <div class="main-our-courses-title lg:mx-20 sm:mx-5 px-10 py-10">
+            <p class="text-lg font-bold font-fontMontserrat text-w_darkblue">Our Courses</p>
+            <div class="h-1 w-10 mt-5 mb-3 bg-w_orange"></div>
+            <div class="flex justify-between items-center">
+                <div>
+                    <h2 class="text-5xl font-fontMontserrat font-bold text-w_black">Featured Courses</h2>
+                </div>
+                <div class="flex">
+                    <div class="py-2 px-4 mx-2 border-2 border-w_smoke rounded hover:bg-w_orange hover:border-w_orange transition ease-in-out duration-500" onclick="preCurData()"><i class="fa-solid fa-angle-left"></i></div>
+                    <div class="py-2 px-4 ml-2 border-2 border-w_smoke rounded hover:bg-w_orange hover:border-w_orange transition ease-in-out duration-500" onclick="nextCurData()"><i class="fa-solid fa-angle-right"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="list_our_product mx-20 px-10 my-10 grid lg:grid-cols-3 lg:gap-10 sm:grid-cols-1">
+            <div class="bg-white" id="courses-1">
+                <div>
+                    <img src="" alt="" style="height: 228px;">
+                </div>
+                <div class="m-3">
+                    <div class="star-vote flex items-center text-w_orange">
+                        <p></p>
+                        <p class="pl-5 text-w_darkblue font-bold"></p>
+                    </div>
+                    <div class="my-5 text-2xl font-bold font-fontMontserrat text-w_darkblue">
+                        <p></p>
+                    </div>
+                    <div class="text-w_smoke flex items-center">
+                        <i class="fa-solid fa-user px-2"></i>
+                        <p></p>
+                        <i class="fa-solid fa-clock px-2"></i>
+                        <p></p>
+                    </div>
+                    <div class="flex items-center font-bold">
+                        <div class="h-10 w-10 my-5 mr-5 rounded-full" style="background-image: url(../img/teacher_1.jpg); background-size: cover;">
+                        </div>
+                        <p class="text-w_smoke pr-1">by</p>
+                        <p class="text-w_darkblue pr-1"></p>
+                        <p class="text-w_smoke pr-1">In</p>
+                        <p class="text-w_darkblue pr-1"></p>
+                    </div>
+                </div>
+                <div class="h-0.5 bg-w_smoke"></div>
+                <div class="flex justify-between my-5">
+                    <div>
+                        <p class="text-w_darkblue font-bold">Free</p>
+                    </div>
+                    <div class="flex">
+                        <i class="fa-solid fa-cart-shopping text-w_orange"></i>
+                        <p class="text-w_smoke font-bold">Get Enrolled</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white" id="courses-2">
+                <div>
+                    <img src="../img/student_background.jpg" alt="" style="height: 228px;">
+                </div>
+                <div class="m-3">
+                    <div class="star-vote flex items-center text-w_orange">
+                        <p></p>
+                        <p class="pl-5 text-w_darkblue font-bold">(2 reviews)</p>
+                    </div>
+                    <div class="my-5 text-2xl font-bold font-fontMontserrat text-w_darkblue">
+                        <p>Teaching Children English Online Course</p>
+                    </div>
+                    <div class="text-w_smoke flex items-center">
+                        <i class="fa-solid fa-user px-2"></i>
+                        <p>170</p>
+                        <i class="fa-solid fa-clock px-2"></i>
+                        <p>5h 20</p>
+                    </div>
+                    <div class="flex items-center font-bold">
+                        <div class="h-10 w-10 my-5 mr-5 rounded-full" style="background-image: url(../img/teacher_1.jpg); background-size: cover;">
+                        </div>
+                        <p class="text-w_smoke pr-1">by</p>
+                        <p class="text-w_darkblue pr-1">Mark Alen</p>
+                        <p class="text-w_smoke pr-1">In</p>
+                        <p class="text-w_darkblue pr-1">Languages</p>
+                    </div>
+                </div>
+                <div class="h-0.5 bg-w_smoke"></div>
+                <div class="flex justify-between my-5">
+                    <div>
+                        <p class="text-w_darkblue font-bold">Free</p>
+                    </div>
+                    <div class="flex">
+                        <i class="fa-solid fa-cart-shopping text-w_orange"></i>
+                        <p class="text-w_smoke font-bold">Get Enrolled</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white" id="courses-3">
+                <div>
+                    <img src="../img/student_background.jpg" alt="" style="height: 228px;">
+                </div>
+                <div class="m-3">
+                    <div class="star-vote flex items-center text-w_orange">
+                        <p></p>
+                        <p class="pl-5 text-w_darkblue font-bold">(2 reviews)</p>
+                    </div>
+                    <div class="my-5 text-2xl font-bold font-fontMontserrat text-w_darkblue">
+                        <p>Teaching Children English Online Course</p>
+                    </div>
+                    <div class="text-w_smoke flex items-center">
+                        <i class="fa-solid fa-user px-2"></i>
+                        <p>170</p>
+                        <i class="fa-solid fa-clock px-2"></i>
+                        <p>5h 20</p>
+                    </div>
+                    <div class="flex items-center font-bold">
+                        <div class="h-10 w-10 my-5 mr-5 rounded-full" style="background-image: url(../img/teacher_1.jpg); background-size: cover;">
+                        </div>
+                        <p class="text-w_smoke pr-1">by</p>
+                        <p class="text-w_darkblue pr-1">Mark Alen</p>
+                        <p class="text-w_smoke pr-1">In</p>
+                        <p class="text-w_darkblue pr-1">Languages</p>
+                    </div>
+                </div>
+                <div class="h-0.5 bg-w_smoke"></div>
+                <div class="flex justify-between my-5">
+                    <div>
+                        <p class="text-w_darkblue font-bold">Free</p>
+                    </div>
+                    <div class="flex">
+                        <i class="fa-solid fa-cart-shopping text-w_orange"></i>
+                        <p class="text-w_smoke font-bold">Get Enrolled</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-our-facilities grid lg:grid-cols-2 sm:grid-cols-1" style="background-image: url(../img/bg_video.jpg); background-size:cover;">
+        <div class="main-our-facilities-left relative">
+            <div class="text-7xl text-w_orange absolute lg:top-1/2 lg:left-1/3 sm:top-5 sm:left-20 sm:ml-20 z-30 bg-white border-4 border-w_orange rounded-full" id="numPlayVideo">
+                <i class="fa-solid fa-circle-play" onclick="playvideo()"></i>
+            </div>
+        </div>
+        <div class="main-our-facilities-right bg-w_blue opacity-90">
+            <div class="ml-20 mr-10 my-10">
+                <div class="p-10">
+                    <p class="text-white text-4xl font-fontMontserrat font-bold sm:pt-10">Our Facilities</p>
+                </div>
+                <ul>
+                    <li>
+                        <div class="flex mb-8">
+                            <div class="mr-10">
+                                <img src="../img/facilites_certificate.png" alt="" style="height: 100px; width: 150px;">
+                            </div>
+                            <div class="text-white ">
+                                <p class="text-lg font-bold mb-5">Global Certificate</p>
+                                <p class="text-base font-medium">Gravida nibh vel velit auctor aliquetn auci elit cons solliazcitudirem sem quibibendum sem nibhutis.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex mb-8">
+                            <div class="mr-10">
+                                <img src="../img/facilites_support.png" alt="" style="height: 100px; width: 150px;">
+                            </div>
+                            <div class="text-white ">
+                                <p class="text-lg font-bold mb-5">Alumni Support</p>
+                                <p class="text-base font-medium">Gravida nibh vel velit auctor aliquetn auci elit cons solliazcitudirem sem quibibendum sem nibhutis.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex mb-8">
+                            <div class="mr-10">
+                                <img src="../img/facilites_book.png" alt="" style="height: 100px; width: 150px;">
+                            </div>
+                            <div class="text-white ">
+                                <p class="text-lg font-bold mb-5">Books & Library</p>
+                                <p class="text-base font-medium">Gravida nibh vel velit auctor aliquetn auci elit cons solliazcitudirem sem quibibendum sem nibhutis.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="w-full h-full bg-black opacity-90 absolute lg:left-0 hidden " id="video" onclick="outplay()">
+            <div class="my-20 mx-20 z-20">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/jDR0JMyoQGA?start=5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="main-meet-teachers">
+        <div class="mt-20 mx-20 grid lg:grid-cols-2 sm:grid-cols-1">
+            <div class="main-meet-teachers-left">
+                <div class="">
+                    <p class="text-lg font-bold font-fontMontserrat text-w_darkblue">Teachers</p>
+                    <div class="h-1 w-12 mt-5 mb-5 bg-w_orange"></div>
+                    <p class="mb-5 text-5xl font-fontMontserrat font-bold text-w_black">Meet our Teachers</p>
+                </div>
+                <div class="py-5 pr-20 text-w_gray text-base tracking-wide">
+                    <p>Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet . Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt mauris. </p>
+                    <br>
+                    <p>Auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet . Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt mauris</p>
+                    <br>
+                    <p>Buci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet . Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt mauris</p>
+                    <button type="button" class="p-6 my-5 bg-w_orange hover-Btn">Career With Us</button>
+                </div>
+            </div>
+            <div class="main-meet-teachers-right sm:mb-20 grid lg:grid-cols-2 lg:grid-rows-2 lg:gap-7 sm:grid-cols-1">
+                <div class="rounded relative sm:w-50 sm:h-80" style="background-image: url(../img/teacher_1.jpg); background-size: cover;">
+                    <div class="p-2 rounded bg-white text-center absolute bottom-5 left-10 right-10" id="teacher-1" onmouseover="hoverTeacher(this)" onmouseout="outHoverTeacher(this)">
+                        <p class="pb-2 text-lg text-w_darkblue font-bold hover:text-w_orange transition ease-in-out duration-500">Damian Green</p>
+                        <p class="text-base text-w_smoke font-medium">Chairman</p>
+                        <div class="text-w_darkblue pt-2 flex justify-center hidden" id="about-teacher-1">
+                            <a class="px-1 hover:text-w_orange transition ease-in-out duration-500"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a class="px-1 hover:text-w_orange transition ease-in-out duration-500"><i class="fa-brands fa-twitter"></i></a>
+                            <a class="px-1 hover:text-w_orange transition ease-in-out duration-500"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a class="px-1 hover:text-w_orange transition ease-in-out duration-500"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded relative sm:w-50 sm:h-80 lg:mt-0 sm:mt-5" style="background-image: url(../img/teacher_2.jpg); background-size: cover;">
+                    <div class="p-2 rounded bg-white text-center absolute bottom-5 left-10 right-10" id="teacher-2" onmouseover="hoverTeacher(this)" onmouseout="outHoverTeacher(this)">
+                        <p class="pb-2 text-lg text-w_darkblue font-bold hover:text-w_orange transition ease-in-out duration-500">Rebeak Alig</p>
+                        <p class="text-base text-w_smoke font-medium">Art Teacher</p>
+                        <div class="text-w_darkblue pt-2 flex justify-center hidden" id="about-teacher-2">
+                            <a class="px-1 hover:text-w_orange transition ease-in-out duration-500"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a class="px-1 hover:text-w_orange transition ease-in-out duration-500"><i class="fa-brands fa-twitter"></i></a>
+                            <a class="px-1 hover:text-w_orange transition ease-in-out duration-500"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a class="px-1 hover:text-w_orange transition ease-in-out duration-500"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded relative sm:w-50 sm:h-80 lg:mt-0 sm:mt-5" style="background-image: url(../img/teacher_3.jpg); background-size: cover;">
+                    <div class="p-2 rounded bg-white text-center absolute bottom-5 left-10 right-10" id="teacher-3" onmouseover="hoverTeacher(this)" onmouseout="outHoverTeacher(this)">
+                        <p class="pb-2 text-lg text-w_darkblue font-bold hover:text-w_orange transition ease-in-out duration-500">Hanna Ben</p>
+                        <p class="text-base text-w_smoke font-medium">Teacher</p>
+                        <div class="text-w_darkblue pt-2 flex justify-center hidden" id="about-teacher-3">
+                            <a class="px-1 hover:text-w_orange transition ease-in-out duration-500"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a class="px-1 hover:text-w_orange transition ease-in-out duration-500"><i class="fa-brands fa-twitter"></i></a>
+                            <a class="px-1 hover:text-w_orange transition ease-in-out duration-500"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a class="px-1 hover:text-w_orange transition ease-in-out duration-500"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded relative sm:w-50 sm:h-80 lg:mt-0 sm:mt-5" style="background-image: url(../img/teacher_4.jpg); background-size: cover;">
+                    <div class="p-2 rounded bg-white text-center absolute bottom-5 left-10 right-10" id="teacher-4" onmouseover="hoverTeacher(this)" onmouseout="outHoverTeacher(this)">
+                        <p class="pb-2 text-lg text-w_darkblue font-bold hover:text-w_orange transition ease-in-out duration-500">Mark Alen</p>
+                        <p class="text-base text-w_smoke font-medium">Teacher</p>
+                        <div class="text-w_darkblue pt-2 flex justify-center hidden" id="about-teacher-4">
+                            <a class="px-1 hover:text-w_orange transition ease-in-out duration-500"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a class="px-1 hover:text-w_orange transition ease-in-out duration-500"><i class="fa-brands fa-twitter"></i></a>
+                            <a class="px-1 hover:text-w_orange transition ease-in-out duration-500"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a class="px-1 hover:text-w_orange transition ease-in-out duration-500"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-feedback mt-20 " style="background-image: url(../img/student_background.jpg); background-size: cover;">
+       <div class="bg-w_blue opacity-90">
+            <div class="main-feedback-content mx-20 text-white">
+                <div class="pt-20">
+                    <p class="pt-10 text-lg font-semibold">Feedback</p>
+                    <div class="h-1 w-12 mt-5 mb-6 bg-white"></div>
+                    <p class="text-6xl font-bold font-fontMontserrat">What Students Say</p>
+                </div>
+                <div class="mt-20 grid lg:grid-cols-2 sm:grid-cols-1" id="feedbackStudent">
+                    <div class="student-feedback-left flex" id="student-1">
+                        <div class="relative">
+                            <img src="../img/student_1.jpg" alt="" style="width: 200px;" id="img-student-1">
+                            <p><i class="fa-solid fa-quote-right px-3 py-1 bg-w_orange text-2xl text-w_darkblue rounded-full absolute -top-5 -right-5"></i></p>
+                        </div>
+                        <div class="mx-10 text-base">
+                            <p id="cmt-student-1">I recommend these courses to everyone, and wish you, guys, luck with the new studies! Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            <p class="mt-3 text-lg font-bold font-fontMontserrat" id="name-student-1">Monica Blews</p>
+                            <p class="font-medium" id="job-student-1">UX Designer</p>
+                        </div>
+                    </div>
+                    <div class="student-feedback-left lg:flex lg:block sm:hidden" id="student-2">
+                        <div class="relative">
+                            <img src="../img/student_2.jpg" alt="" style="width: 200px;" id="img-student-2">
+                            <p><i class="fa-solid fa-quote-right px-3 py-1 bg-w_orange text-2xl text-w_darkblue rounded-full absolute -top-5 -right-5"></i></p>
+                        </div>
+                        <div class="mx-10 text-base">
+                            <p id="cmt-student-2">Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore Lorem ipsum dolor sit amet.</p>
+                            <p class="mt-3 text-lg font-bold font-fontMontserrat" id="name-student-2">James Smith</p>
+                            <p class="font-medium" id="job-student-2">Apps Developer</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="py-20 text-sm flex justify-center" id="numberSlideFeedback">
+                    <p class="px-2 "><i class="fa-solid fa-circle text-w_orange hover:text-w_orange transition ease-in-out duration-500" id="nS1" onclick="showFeedbackForStudent(0)"></i></p>
+                    <p class="px-2 "><i class="fa-solid fa-circle hover:text-w_orange transition ease-in-out duration-500" id="nS2" onclick="showFeedbackForStudent(1)"></i></p>
+                    <p class="px-2 "><i class="fa-solid fa-circle hover:text-w_orange transition ease-in-out duration-500" id="nS3" onclick="showFeedbackForStudent(2)"></i></p>
+                </div>
+            </div>
+       </div>
+    </div>
+    <div class="main-bookStore">
+        <div class="main-bookStore-content m-20 ">
+            <div class="main-bookStore-title flex justify-between">
+                <div>
+                    <p class="text-lg font-semibold text-w_darkblue">Book Store</p>
+                    <div class="h-1 w-12 mt-5 mb-6 bg-w_orange"></div>
+                    <p class="text-5xl font-bold font-fontMontserrat text-w_black">Publications</p>
+                </div>
+                <div class="flex items-center">
+                    <button class="py-2 px-4 bg-w_orange hover-Btn">All Products</button>
+                </div>
+            </div>
+            <div class="mx-5 my-10 grid lg:grid-cols-4 gap-10 sm:grid-cols-2">
+                <div>
+                    <div class="bg-w_greyish flex justify-center items-center relative" onmouseover="hoverBookStore(this)" onmouseout="outHoverBookStore(this)" >
+                        <img src="../img/book.jpg" alt="" class="w-3/5 py-10">
+                        <div class="w-full py-20 bg-w_darkblue opacity-80 text-w_orange flex justify-center absolute left-50 hidden">
+                            <a href="#"><i class="fa-solid fa-cart-shopping my-10 ml-20 p-2 border-2 border-w_orange rounded-full hover:text-w_blue hover:bg-w_orange"></i></a>
+                            <a href=""><i class="fa-solid fa-magnifying-glass my-10 ml-4 p-2 border-2 border-w_orange rounded-full hover:text-w_blue hover:bg-w_orange"></i></a>
+                        </div>
+                    </div>
+                    <div class="my-5 text-center">
+                        <p class="text-xl font-fontMontserrat font-bold text-w_darkblue">Book 9</p>
+                        <p class="text-lg font-bold text-w_black">&#163;45</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="bg-w_greyish flex justify-center items-center relative" onmouseover="hoverBookStore(this)" onmouseout="outHoverBookStore(this)" >
+                        <img src="../img/book_2.jpg" alt="" class="w-3/5 py-10">
+                        <div class="w-full py-20 bg-w_darkblue opacity-80 text-w_orange flex justify-center absolute left-50 hidden">
+                            <a href="#"><i class="fa-solid fa-cart-shopping my-10 ml-20 p-2 border-2 border-w_orange rounded-full hover:text-w_blue hover:bg-w_orange"></i></a>
+                            <a href=""><i class="fa-solid fa-magnifying-glass my-10 ml-4 p-2 border-2 border-w_orange rounded-full hover:text-w_blue hover:bg-w_orange"></i></a>
+                        </div>
+                    </div>
+                    <div class="my-5 text-center">
+                        <p class="text-xl font-fontMontserrat font-bold text-w_darkblue">Book 8</p>
+                        <p class="text-lg font-bold text-w_black">&#163;20</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="bg-w_greyish flex justify-center items-center relative" onmouseover="hoverBookStore(this)" onmouseout="outHoverBookStore(this)" >
+                        <img src="../img/book_3.jpg" alt="" class="w-3/5 py-10">
+                        <div class="w-full py-20 bg-w_darkblue opacity-80 text-w_orange flex justify-center absolute left-50 hidden">
+                            <a href="#"><i class="fa-solid fa-cart-shopping my-10 ml-20 p-2 border-2 border-w_orange rounded-full hover:text-w_blue hover:bg-w_orange"></i></a>
+                            <a href=""><i class="fa-solid fa-magnifying-glass my-10 ml-4 p-2 border-2 border-w_orange rounded-full hover:text-w_blue hover:bg-w_orange"></i></a>
+                        </div>
+                    </div>
+                    <div class="my-5 text-center">
+                        <p class="text-xl font-fontMontserrat font-bold text-w_darkblue">Book 7</p>
+                        <p class="text-lg font-bold text-w_black">&#163;65</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="bg-w_greyish flex justify-center items-center relative" onmouseover="hoverBookStore(this)" onmouseout="outHoverBookStore(this)" >
+                        <img src="../img/book_4.jpg" alt="" class="w-3/5 py-10">
+                        <div class="w-full py-20 bg-w_darkblue opacity-80 text-w_orange flex justify-center absolute left-50 hidden">
+                            <a href="#"><i class="fa-solid fa-cart-shopping my-10 ml-20 p-2 border-2 border-w_orange rounded-full hover:text-w_blue hover:bg-w_orange"></i></a>
+                            <a href=""><i class="fa-solid fa-magnifying-glass my-10 ml-4 p-2 border-2 border-w_orange rounded-full hover:text-w_blue hover:bg-w_orange"></i></a>
+                        </div>
+                    </div>
+                    <div class="my-5 text-center">
+                        <p class="text-xl font-fontMontserrat font-bold text-w_darkblue">Book 6</p>
+                        <p class="text-lg font-bold text-w_black">&#163;90</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-fromNews m-20">
+        <div class="main-fromNews-title">
+            <div>
+                <p class="text-lg font-semibold text-w_darkblue">From the News</p>
+                <div class="h-1 w-12 mt-5 mb-6 bg-w_orange"></div>
+                <p class="text-5xl font-bold font-fontMontserrat text-w_black">Latest News</p>
+            </div>
+            <div class="mt-10 grid lg:grid-cols-3 sm:grid-cols-1 gap-10">
+                <div>
+                    <div>
+                        <img src="../img/news_image_1.jpeg" alt="">
+                    </div>
+                    <div class="my-5 text-sm text-w_smoke flex items-center">
+                        <p class=""><i class="fa-solid fa-calendar-days text-w_orange pr-2"></i> 17 JULY 2019</p>
+                        <p class="px-3"><i class="fa-solid fa-user text-w_orange pr-2"></i> MARK ALEN</p>
+                    </div>
+                    <div >
+                        <p class="text-2xl font-bold text-w_darkblue hover:text-w_orange transition ease-in-out duration-500 ease-in-out">How to Learn Faster and Remember</p>
+                        <p class="my-5 text-base text-w_gray">Scelerisque ante platea nullam himenaeos quam sollicitudin ullamcorper sodales tristique</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="../img/news_image_2.jpg" alt="">
+                    </div>
+                    <div class="my-5 text-sm text-w_smoke flex items-center">
+                        <p class=""><i class="fa-solid fa-calendar-days text-w_orange pr-2"></i> 16 JULY 2019</p>
+                        <p class="px-3"><i class="fa-solid fa-user text-w_orange pr-2"></i> MARK ALEN</p>
+                    </div>
+                    <div>
+                        <p class="text-2xl font-bold text-w_darkblue hover:text-w_orange transition ease-in-out duration-500 ease-in-out">Free Online Courses from Top Universities</p>
+                        <p class="my-5 text-base text-w_gray">Scelerisque ante platea nullam himenaeos quam sollicitudin ullamcorper sodales tristique</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img src="../img/news_image_3.jpeg" alt="">
+                    </div>
+                    <div class="my-5 text-sm text-w_smoke flex items-center">
+                        <p class=""><i class="fa-solid fa-calendar-days text-w_orange pr-2"></i> 16 JULY 2019</p>
+                        <p class="px-3"><i class="fa-solid fa-user text-w_orange pr-2"></i> MARK ALEN</p>
+                    </div>
+                    <div>
+                        <p class="text-2xl font-bold text-w_darkblue hover:text-w_orange transition ease-in-out duration-500 ease-in-out">Learn Exactly How I Improved Education</p>
+                        <p class="my-5 text-base text-w_gray">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-logos">
+        <div class="slide-logos-content m-20 flex">
+            <div class="slide_item">
+                <a href=""><img src="../img/icon1.png" alt=""></a>
+            </div>
+            <div class="slide_item">
+                <a href=""><img src="../img/icon2.png" alt=""></a>
+            </div>
+            <div class="slide_item">
+               <a href=""> <img  src="../img/icon3.png" alt=""></a>
+            </div>
+            <div class="slide_item">
+                <a href=""><img src="../img/icon4.png" alt=""></a>
+            </div>
+            <div class="slide_item">
+                <a href=""><img src="../img/icon5.png" alt=""></a>
+            </div>
+            <div class="slide_item">
+                <a href=""><img src="../img/icon1.png" alt=""></a>
+            </div>
+            <div class="slide_item">
+                <a href=""><img src="../img/icon2.png" alt=""></a>
+            </div>
+            <div class="slide_item">
+               <a href=""> <img  src="../img/icon3.png" alt=""></a>
+            </div>
+            <div class="slide_item">
+                <a href=""><img src="../img/icon4.png" alt=""></a>
+            </div>
+            <div class="slide_item">
+                <a href=""><img src="../img/icon5.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+  </main>
+  <footer>
+    <div class="bg-w_darkblue">
+        <div class="mx-20">
+            <div class="grid lg:grid-cols-12 sm:grid-cols-1">
+                <div class="footer-logo col-span-4 lg:my-10 sm:my-5 pt-5">
+                    <a href=""><img src="../img/white-logo.png" alt="" style="width: 48%"></a>
+                    <p class="pt-5 ml-3 text-w_greyish">Edubin perfect for online courses and other institutes. It’s a complete solution with lms features and functionalities.</p>
+                    <div class="mt-5 ml-3 grid grid-cols-7 ">
+                        <div><a href=""><i class="fa-brands fa-facebook-f mx-1 px-3.5 py-3 text-w_greyish bg-w_logo_footer rounded-full hover:text-w_orange hover:py-2 hover:px-2.5 transition ease-in-out duration-500 "></i></a></div>
+                        <div><a href=""><i class="fa-brands fa-twitter mx-1 p-3 text-w_greyish bg-w_logo_footer rounded-full hover:text-w_orange hover:p-2 transition ease-in-out duration-500"></i></a></div>
+                        <div><a href=""><i class="fa-brands fa-youtube-square mx-1 p-3 text-w_greyish bg-w_logo_footer rounded-full hover:text-w_orange hover:p-2 transition ease-in-out duration-500"></i></i></a></div>
+                        <div><a href=""><i class="fa-brands fa-instagram mx-1 p-3 text-w_greyish bg-w_logo_footer rounded-full hover:text-w_orange hover:p-2 transition ease-in-out duration-500"></i></a></div>
+                        <div class="col-span-3"></div>
+                    </div>
+                </div>
+                <div class="footer-featureLinks col-span-3 lg:my-10 sm:my-5 pt-5 mx-5">
+                    <p class="text-xl font-bold font-fontMontserrat text-white">Feature Links</p>
+                    <div class="mt-5 leading-8 grid grid-cols-2 ">
+                        <div>
+                            <ul class="">
+                                <li><a href="" ><i class="fa-solid fa-angle-right text-w_orange"></i><span class="footer-item"> About Us </span></a></li>
+                                <li><a href="" ><i class="fa-solid fa-angle-right text-w_orange"></i><span class="footer-item"> Graduation </span></a></li>
+                                <li><a href="" ><i class="fa-solid fa-angle-right text-w_orange"></i><span class="footer-item"> Scholarshi </span></a></li>
+                                <li><a href="" ><i class="fa-solid fa-angle-right text-w_orange"></i><span class="footer-item"> Contact </span></a></li>
+                                <li><a href="" ><i class="fa-solid fa-angle-right text-w_orange"></i><span class="footer-item"> Result </span></a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="pl-3">    
+                                <li><a href="" ><i class="fa-solid fa-angle-right text-w_orange"></i><span class="footer-item"> Admissions </span></a></li>
+                                <li><a href="" ><i class="fa-solid fa-angle-right text-w_orange"></i><span class="footer-item"> International </span></a></li>
+                                <li><a href="" ><i class="fa-solid fa-angle-right text-w_orange"></i><span class="footer-item"> Teachers </span></a></li>
+                                <li><a href="" ><i class="fa-solid fa-angle-right text-w_orange"></i><span class="footer-item"> Alumni </span></a></li>
+                                <li><a href="" ><i class="fa-solid fa-angle-right text-w_orange"></i><span class="footer-item"> Events </span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-support col-span-2 lg:my-10 sm:my-5 pt-5 mx-5">
+                    <p class="text-xl font-bold font-fontMontserrat text-white">Support</p>
+                    <div class="mt-5 leading-8"> 
+                        <ul class="">
+                            <li><a href="" ><i class="fa-solid fa-angle-right text-w_orange"></i><span class="footer-item"> Language </span></a></li>
+                            <li><a href="" ><i class="fa-solid fa-angle-right text-w_orange"></i><span class="footer-item"> WordPress </span></a></li>
+                            <li><a href="" ><i class="fa-solid fa-angle-right text-w_orange"></i><span class="footer-item"> Privacy </span></a></li>
+                            <li><a href="" ><i class="fa-solid fa-angle-right text-w_orange"></i><span class="footer-item"> FAQs </span></a></li>
+                            <li><a href="" ><i class="fa-solid fa-angle-right text-w_orange"></i><span class="footer-item"> Support </span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-contactUs col-span-3 lg:my-10 sm:my-5 pt-5 ml-5">
+                    <p class="text-xl font-bold font-fontMontserrat text-white">Contact Us</p>
+                    <p class="pt-5 text-w_greyish">203, Envato Labs, Behind Alis Steet, Melbourne, Australia.</p>
+                    <div class="mt-5 leading-8"> 
+                        <ul class="">
+                            <li><a href="" class="text-w_greyish"><i class="fa-solid fa-phone"></i><span>&nbsp; +1 23-4567-8920 </span></a></li>
+                            <li><a href="" class="text-w_greyish"><i class="fa-solid fa-envelope"></i><span>&nbsp; info@yourmail.com </span></a></li>
+                            <li><a href="" class="text-w_greyish"><i class="fa-solid fa-globe"></i><span>&nbsp; www.yourdomain.com </span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-w_logo_footer">
+        <div class="mx-20 py-8 text-w_greyish flex justify-between">
+            <div>
+                <span>&copy; 2022 Pixelcurve. All rights reserved.</span>
+            </div>
+            <div class="lg:block sm:hidden">
+                <ul class="flex">
+                    <li class="pr-2 hover:text-w_orange transition ease-in-out duration-500">Language</li>
+                    <li class="pr-2">&verbar;</li>
+                    <li class="pr-2 hover:text-w_orange transition ease-in-out duration-500">WordPress</li>
+                    <li class="pr-2">&verbar;</li>
+                    <li class="pr-2 hover:text-w_orange transition ease-in-out duration-500">Privacy</li>
+                    <li class="pr-2">&verbar;</li>
+                    <li class="pr-2 hover:text-w_orange transition ease-in-out duration-500">FAQs</li>
+                    <li class="pr-2">&verbar;</li>
+                    <li class="hover:text-w_orange transition ease-in-out duration-500">Support</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+  </footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="../js/main.js" type="text/javascript"></script>
+<script src="../js/callAPI.js"></script>
+</body>
+</html>
